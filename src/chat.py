@@ -15,7 +15,7 @@ setup_logging()
 logger = logging.getLogger(__name__)
 
 @st.cache_resource(show_spinner=False)
-def get_model_pulled(model: str) -> bool:
+def ensure_model_pulled(model: str) -> bool:
     """
     Check if the model is already pulled and availabe localy.
 
@@ -41,7 +41,7 @@ def get_model_pulled(model: str) -> bool:
     return True
 
 
-def run_llama_streaming(promt: str, temperature: float) -> Optional[Iterable[str]]:
+def run_llama_streaming(prompt: str, temperature: float) -> Optional[Iterable[str]]:
     """
     
     Uses Ollama's Python library to run the LLaMA model with streaming enabled.
@@ -69,7 +69,7 @@ def run_llama_streaming(promt: str, temperature: float) -> Optional[Iterable[str
 
     return stream
 
-def promt_template(query: str, context: str, history:List[Dict[Str, str]]) -> str:
+def prompt_template(query: str, context: str, history:List[Dict[str, str]]) -> str:
     """
     Generates the prompt for the LLaMA model based on the query, context and history.
 
@@ -109,7 +109,7 @@ def generate_response_streaming(
     use_hybrid_search: bool,
     num_results: int,
     temperature: float,
-    Chat_history: Optional[List[Dict[str, str]]] = None,
+    chat_history: Optional[List[Dict[str, str]]] = None,
 ) -> Optional[Iterable[str]]:
     """
     Generates a chatbot response by performing hybrid search and incorporating conversation history.

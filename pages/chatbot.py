@@ -103,7 +103,7 @@ def render_chatbot_page() -> None:
     st.sidebar.markdown(
         """
         <div class="footer-text">
-            © 202 Chat with Doc
+            © 2025 Chat with Doc
         </div>
         """,
         unsafe_allow_html=True,
