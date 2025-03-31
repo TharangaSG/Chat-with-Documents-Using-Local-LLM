@@ -5,7 +5,7 @@ build-backend = "uv.pip_install.build_backend"
 [project]
 name = "research-agent"
 version = "0.1.0"
-description = "Your project description"
+description = "Chat with multiple documents using local LLM"
 authors = [{ name = "thara", email = "" }]
 dependencies = [
     "streamlit==1.39.0",
